@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>cutout demo</title>
+  <style>
+    .extra {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .button {
+      width: 100%;
+      height: 30px;
+      line-height: 30px;
+      background-color: firebrick;
+      color: #fff;
+      padding: 5px;
+      text-align: center;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+<div id="app">
+  <cutout :show="800" :on="on" :gradient-height="40">
+    <div >
+      <p style="box-sizing: border-box; margin-bottom: 16px; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255); margin-top: 0px !important;">
+        <a href="https://npmjs.com/package/postcss-loader" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none;"><img src="https://camo.githubusercontent.com/7d64db2fd2e1880cd5de8405822c1c84f5a06fa5/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f762f706f73746373732d6c6f616465722e737667" alt="npm"/></a>&nbsp;<a href="https://nodejs.org/" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none;"><img src="https://camo.githubusercontent.com/33c45bacdba8f5086c281b0a3da264738aec0e41/68747470733a2f2f696d672e736869656c64732e696f2f6e6f64652f762f706f73746373732d6c6f616465722e737667" alt="node"/></a>&nbsp;<a href="https://david-dm.org/postcss/postcss-loader" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none;"><img src="https://camo.githubusercontent.com/ed6868ae5e86949bdb23ec24626a0a11890349c6/68747470733a2f2f64617669642d646d2e6f72672f706f73746373732f706f73746373732d6c6f616465722e737667" alt="deps"/></a>&nbsp;<a href="https://travis-ci.org/postcss/postcss-loader" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none;"><img src="https://camo.githubusercontent.com/479cffec59b1307b86422fe330a468997b5d0cbc/687474703a2f2f696d672e736869656c64732e696f2f7472617669732f706f73746373732f706f73746373732d6c6f616465722e737667" alt="tests"/></a>&nbsp;<a href="https://coveralls.io/github/postcss/postcss-loader" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none;"><img src="https://camo.githubusercontent.com/b5f9b1d250aea35b8157e5a1e5ad5317ddde0cdd/68747470733a2f2f636f766572616c6c732e696f2f7265706f732f6769746875622f706f73746373732f706f73746373732d6c6f616465722f62616467652e737667" alt="coverage"/></a>&nbsp;<a href="https://gitter.im/postcss/postcss" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none;"><img src="https://camo.githubusercontent.com/0702043ad6f3838bc9ed0c98a10e163c9b2ee30f/68747470733a2f2f6261646765732e6769747465722e696d2f706f73746373732f706f73746373732e737667" alt="chat"/></a>
+      </p>
+      <p>
+        <a target="_blank" href="https://camo.githubusercontent.com/2ec260a9d4d3dcc109be800af0b29a8471ad5967/687474703a2f2f706f73746373732e6769746875622e696f2f706f73746373732f6c6f676f2e737667" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none;"><img width="180" height="180" alt="PostCSS Logo" src="https://camo.githubusercontent.com/2ec260a9d4d3dcc109be800af0b29a8471ad5967/687474703a2f2f706f73746373732e6769746875622e696f2f706f73746373732f6c6f676f2e737667"/></a>&nbsp;<a href="https://github.com/webpack/webpack" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none;"><img width="200" height="200" src="https://camo.githubusercontent.com/36f3c35d2994799ee2392b1d9d1b4b8f48d9c495/68747470733a2f2f63646e2e7261776769742e636f6d2f7765627061636b2f6d656469612f65373438356562322f6c6f676f2f69636f6e2e737667"/></a>
+      </p>
+      <p>
+        <a href="https://evilmartians.com/?utm_source=postcss" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none;"><img src="https://camo.githubusercontent.com/608ad776fcb2da2b33f4f8265889cc5f1b8a6bad/68747470733a2f2f6576696c6d61727469616e732e636f6d2f6261646765732f73706f6e736f7265642d62792d6576696c2d6d61727469616e732e737667" alt="Sponsored by Evil Martians" width="236" height="54"/></a>
+      </p>
+      <h1 style="box-sizing: border-box; margin: 24px 0px 16px; line-height: 1.25; padding-bottom: 0.3em; border-bottom: 1px solid rgb(234, 236, 239);">
+        <a class="anchor" href="https://github.com/postcss/postcss-loader#postcss-loader" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none; float: left; padding-right: 4px; margin-left: -20px; line-height: 1;"></a>PostCSS Loader
+      </h1>
+      <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 16px;">
+        Loader for&nbsp;<a href="http://webpack.js.org/" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none;">webpack</a>&nbsp;to process CSS with&nbsp;<a href="http://postcss.org/" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none;">PostCSS</a>
+      </p>
+      <h2 style="box-sizing: border-box; margin-top: 24px; margin-bottom: 16px; line-height: 1.25; padding-bottom: 0.3em; border-bottom: 1px solid rgb(234, 236, 239); color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        <a class="anchor" href="https://github.com/postcss/postcss-loader#install" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none; float: left; padding-right: 4px; margin-left: -20px; line-height: 1;"></a>Install
+      </h2>
+      <pre style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; margin-top: 0px; margin-bottom: 0px; word-wrap: normal; padding: 16px; overflow: auto; line-height: 1.45; background-color: rgb(246, 248, 250); border-radius: 3px; word-break: normal;">npm i -D postcss-loader</pre>
+      <h2 style="box-sizing: border-box; margin-top: 24px; margin-bottom: 16px; line-height: 1.25; padding-bottom: 0.3em; border-bottom: 1px solid rgb(234, 236, 239); color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        <a class="anchor" href="https://github.com/postcss/postcss-loader#usage" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none; float: left; padding-right: 4px; margin-left: -20px; line-height: 1;"></a>Usage
+      </h2>
+      <h3 style="box-sizing: border-box; margin-top: 24px; margin-bottom: 16px; font-size: 1.25em; line-height: 1.25; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        <a class="anchor" href="https://github.com/postcss/postcss-loader#configuration" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none; float: left; padding-right: 4px; margin-left: -20px; line-height: 1;"></a><code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: inherit; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">Configuration</code>
+      </h3>
+      <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 16px; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        <span style="box-sizing: border-box; font-weight: 600;">postcss.config.js</span>
+      </p>
+      <pre style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; margin-top: 0px; margin-bottom: 0px; word-wrap: normal; padding: 16px; overflow: auto; line-height: 1.45; background-color: rgb(246, 248, 250); border-radius: 3px; word-break: normal;">module.exports = {
+  parser: &#39;sugarss&#39;,
+  plugins: {    &#39;postcss-import&#39;: {},    &#39;postcss-cssnext&#39;: {},    &#39;cssnano&#39;: {}
+  }
+}</pre>
+      <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 16px; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        You can read more about common PostCSS Config&nbsp;<a href="https://github.com/michael-ciniawsky/postcss-load-config" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none;">here</a>.
+      </p>
+      <h3 style="box-sizing: border-box; margin-top: 24px; margin-bottom: 16px; font-size: 1.25em; line-height: 1.25; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        <a class="anchor" href="https://github.com/postcss/postcss-loader#config-cascade" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none; float: left; padding-right: 4px; margin-left: -20px; line-height: 1;"></a><code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: inherit; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">Config Cascade</code>
+      </h3>
+      <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 16px; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        You can use different&nbsp;<code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">postcss.config.js</code>&nbsp;files in different directories. Config lookup starts from&nbsp;<code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">path.dirname(file)</code>&nbsp;and walks the file tree upwards until a config file is found.
+      </p>
+      <pre style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; margin-top: 0px; margin-bottom: 16px; word-wrap: normal; padding: 16px; overflow: auto; line-height: 1.45; background-color: rgb(246, 248, 250); border-radius: 3px; color: rgb(36, 41, 46);">|– components
+| |– component
+| | |– index.js
+| | |– index.png
+| | |– style.css (1)
+| | |– postcss.config.js (1)
+| |– component
+| | |– index.js
+| | |– image.png
+| | |– style.css (2)
+|
+|– postcss.config.js (1 &amp;&amp; 2 (recommended))
+|– webpack.config.js
+|
+|– package.json</pre>
+      <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 16px; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        After setting up your&nbsp;<code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">postcss.config.js</code>, add&nbsp;<code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">postcss-loader</code>&nbsp;to your&nbsp;<code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">webpack.config.js</code>. You can use it standalone or in conjunction with&nbsp;<code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">css-loader</code>&nbsp;(recommended). Use it&nbsp;<span style="box-sizing: border-box; font-weight: 600;">after</span>&nbsp;<code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">css-loader</code>&nbsp;and&nbsp;<code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">style-loader</code>, but&nbsp;<span style="box-sizing: border-box; font-weight: 600;">before</span>&nbsp;other preprocessor loaders like e.g&nbsp;<code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">sass|less|stylus-loader</code>, if you use any.
+      </p>
+      <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 16px; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        <span style="box-sizing: border-box; font-weight: 600;">webpack.config.js</span>
+      </p>
+      <pre style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; margin-top: 0px; margin-bottom: 0px; word-wrap: normal; padding: 16px; overflow: auto; line-height: 1.45; background-color: rgb(246, 248, 250); border-radius: 3px; word-break: normal;">module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [ &#39;style-loader&#39;, &#39;postcss-loader&#39; ]
+      }
+    ]
+  }
+}</pre>
+      <blockquote style="box-sizing: border-box; margin: 0px 0px 16px; padding: 0px 1em; color: rgb(106, 115, 125); border-left: 0.25em solid rgb(223, 226, 229); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 0px;">
+          ⚠️&nbsp;When&nbsp;<code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">postcss-loader</code>&nbsp;is used standalone (without&nbsp;<code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">css-loader</code>) don&#39;t use&nbsp;<code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">@import</code>&nbsp;in your CSS, since this can lead to quite bloated bundles
+        </p>
+      </blockquote>
+      <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 16px; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        <span style="box-sizing: border-box; font-weight: 600;">webpack.config.js (recommended)</span>
+      </p>
+      <pre style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; margin-top: 0px; margin-bottom: 0px; word-wrap: normal; padding: 16px; overflow: auto; line-height: 1.45; background-color: rgb(246, 248, 250); border-radius: 3px; word-break: normal;">module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [          &#39;style-loader&#39;,
+          { loader: &#39;css-loader&#39;, options: { importLoaders: 1 } },          &#39;postcss-loader&#39;
+        ]
+      }
+    ]
+  }
+}</pre>
+      <h2 style="box-sizing: border-box; margin-top: 24px; margin-bottom: 16px; line-height: 1.25; padding-bottom: 0.3em; border-bottom: 1px solid rgb(234, 236, 239); color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        <a class="anchor" href="https://github.com/postcss/postcss-loader#options" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none; float: left; padding-right: 4px; margin-left: -20px; line-height: 1;"></a>Options
+      </h2>
+      <table width="898" style="width: 828px;">
+        <thead style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);" class="firstRow">
+          <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            Name
+          </th>
+          <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            Type
+          </th>
+          <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            Default
+          </th>
+          <th align="left" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            Description
+          </th>
+        </tr>
+        </thead>
+        <tbody style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <a href="https://github.com/postcss/postcss-loader#exec" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none;"><code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">exec</code></a>
+          </td>
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">{Boolean}</code>
+          </td>
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">undefined</code>
+          </td>
+          <td align="left" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            Enable PostCSS Parser support in&nbsp;<code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">CSS-in-JS</code>
+          </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <a href="https://github.com/postcss/postcss-loader#syntaxes" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none;"><code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">parser</code></a>
+          </td>
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">{String|Object}</code>
+          </td>
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">undefined</code>
+          </td>
+          <td align="left" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            Set PostCSS Parser
+          </td>
+        </tr>
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <a href="https://github.com/postcss/postcss-loader#syntaxes" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none;"><code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">syntax</code></a>
+          </td>
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">{String|Object}</code>
+          </td>
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">undefined</code>
+          </td>
+          <td align="left" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            Set PostCSS Syntax
+          </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <a href="https://github.com/postcss/postcss-loader#syntaxes" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none;"><code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">stringifier</code></a>
+          </td>
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">{String|Object}</code>
+          </td>
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">undefined</code>
+          </td>
+          <td align="left" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            Set PostCSS Stringifier
+          </td>
+        </tr>
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <a href="https://github.com/postcss/postcss-loader#config" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none;"><code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">config</code></a>
+          </td>
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">{Object}</code>
+          </td>
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">undefined</code>
+          </td>
+          <td align="left" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            Set&nbsp;<code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">postcss.config.js</code>&nbsp;config path &amp;&amp;&nbsp;<code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">ctx</code>
+          </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <a href="https://github.com/postcss/postcss-loader#plugins" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none;"><code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">plugins</code></a>
+          </td>
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">{Array|Function}</code>
+          </td>
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">[]</code>
+          </td>
+          <td align="left" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            Set PostCSS Plugins
+          </td>
+        </tr>
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <a href="https://github.com/postcss/postcss-loader#sourcemap" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none;"><code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">sourceMap</code></a>
+          </td>
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">{String|Boolean}</code>
+          </td>
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">false</code>
+          </td>
+          <td align="left" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            Enable Source Maps
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <h3 style="box-sizing: border-box; margin-top: 24px; margin-bottom: 16px; font-size: 1.25em; line-height: 1.25; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        <a class="anchor" href="https://github.com/postcss/postcss-loader#exec" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none; float: left; padding-right: 4px; margin-left: -20px; line-height: 1;"></a><code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: inherit; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">Exec</code>
+      </h3>
+      <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 16px; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        If you use JS styles without the&nbsp;<a href="https://github.com/postcss/postcss-js" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none;"><code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">postcss-js</code></a>&nbsp;parser, add the&nbsp;<code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">exec</code>&nbsp;option.
+      </p>
+      <pre style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; margin-top: 0px; margin-bottom: 0px; word-wrap: normal; padding: 16px; overflow: auto; line-height: 1.45; background-color: rgb(246, 248, 250); border-radius: 3px; word-break: normal;">{
+  test: /\.style.js$/,
+  use: [    &#39;style-loader&#39;,
+    { loader: &#39;css-loader&#39;, options: { importLoaders: 1 } },
+    { loader: &#39;postcss-loader&#39;, options: { parser: &#39;sugarss&#39;, exec: true } }
+  ]
+}</pre>
+      <h3 style="box-sizing: border-box; margin-top: 24px; margin-bottom: 16px; font-size: 1.25em; line-height: 1.25; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        <a class="anchor" href="https://github.com/postcss/postcss-loader#config" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none; float: left; padding-right: 4px; margin-left: -20px; line-height: 1;"></a><code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: inherit; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">Config</code>
+      </h3>
+      <table width="898" style="width: 828px;">
+        <thead style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);" class="firstRow">
+          <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            Name
+          </th>
+          <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            Type
+          </th>
+          <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            Default
+          </th>
+          <th align="left" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            Description
+          </th>
+        </tr>
+        </thead>
+        <tbody style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <a href="https://github.com/postcss/postcss-loader#path" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none;"><code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">path</code></a>
+          </td>
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">{String}</code>
+          </td>
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">undefined</code>
+          </td>
+          <td align="left" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            PostCSS Config Directory
+          </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <a href="https://github.com/postcss/postcss-loader#context" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none;"><code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">context</code></a>
+          </td>
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">{Object}</code>
+          </td>
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">undefined</code>
+          </td>
+          <td align="left" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            PostCSS Config Context
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <h4 style="box-sizing: border-box; margin-top: 24px; margin-bottom: 16px; line-height: 1.25; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        <a class="anchor" href="https://github.com/postcss/postcss-loader#path" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none; float: left; padding-right: 4px; margin-left: -20px; line-height: 1;"></a><code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: inherit; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">Path</code>
+      </h4>
+      <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 16px; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        You can manually specify the path to search for your config (<code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">postcss.config.js</code>) with the&nbsp;<code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">config.path</code>&nbsp;option. This is needed if you store your config in a separate e.g&nbsp;<code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">./config || ./.config</code>&nbsp;folder.
+      </p>
+      <blockquote style="box-sizing: border-box; margin: 0px 0px 16px; padding: 0px 1em; color: rgb(106, 115, 125); border-left: 0.25em solid rgb(223, 226, 229); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 0px;">
+          ⚠️&nbsp;Otherwise it is&nbsp;<span style="box-sizing: border-box; font-weight: 600;">unnecessary</span>&nbsp;to set this option and is&nbsp;<span style="box-sizing: border-box; font-weight: 600;">not</span>&nbsp;recommended
+        </p>
+      </blockquote>
+      <blockquote style="box-sizing: border-box; margin: 0px 0px 16px; padding: 0px 1em; color: rgb(106, 115, 125); border-left: 0.25em solid rgb(223, 226, 229); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 0px;">
+          ⚠️&nbsp;Note that you&nbsp;<span style="box-sizing: border-box; font-weight: 600;">can&#39;t</span>&nbsp;use a&nbsp;<span style="box-sizing: border-box; font-weight: 600;">filename</span>&nbsp;other than the&nbsp;<a href="https://github.com/michael-ciniawsky/postcss-load-config#usage" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none;">supported config formats</a>&nbsp;(e.g&nbsp;<code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">.postcssrc.js</code>,&nbsp;<code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">postcss.config.js</code>), this option only allows you to manually specify the&nbsp;<span style="box-sizing: border-box; font-weight: 600;">directory</span>&nbsp;where config lookup should&nbsp;<span style="box-sizing: border-box; font-weight: 600;">start</span>from
+        </p>
+      </blockquote>
+      <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 16px; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        <span style="box-sizing: border-box; font-weight: 600;">webpack.config.js</span>
+      </p>
+      <pre style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; margin-top: 0px; margin-bottom: 0px; word-wrap: normal; padding: 16px; overflow: auto; line-height: 1.45; background-color: rgb(246, 248, 250); border-radius: 3px; word-break: normal;">{
+  loader: &#39;postcss-loader&#39;,
+  options: {
+    config: {
+      path: &#39;path/to/.config/&#39; ✅
+      path: &#39;path/to/.config/css.config.js&#39; ❌
+    }
+  }
+}</pre>
+      <h4 style="box-sizing: border-box; margin-top: 24px; margin-bottom: 16px; line-height: 1.25; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        <a class="anchor" href="https://github.com/postcss/postcss-loader#context-ctx" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none; float: left; padding-right: 4px; margin-left: -20px; line-height: 1;"></a><code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: inherit; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">Context (ctx)</code>
+      </h4>
+      <table width="898" style="width: 828px;">
+        <thead style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);" class="firstRow">
+          <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            Name
+          </th>
+          <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            Type
+          </th>
+          <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            Default
+          </th>
+          <th align="left" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            Description
+          </th>
+        </tr>
+        </thead>
+        <tbody style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">env</code>
+          </td>
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">{String}</code>
+          </td>
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">&#39;development&#39;</code>
+          </td>
+          <td align="left" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">process.env.NODE_ENV</code>
+          </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">file</code>
+          </td>
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">{Object}</code>
+          </td>
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">loader.resourcePath</code>
+          </td>
+          <td align="left" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">extname</code>,&nbsp;<code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">dirname</code>,&nbsp;<code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">basename</code>
+          </td>
+        </tr>
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">options</code>
+          </td>
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">{Object}</code>
+          </td>
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">{}</code>
+          </td>
+          <td align="left" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            Options
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 16px; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        <code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">postcss-loader</code>&nbsp;exposes context&nbsp;<code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">ctx</code>&nbsp;to the config file, making your&nbsp;<code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">postcss.config.js</code>&nbsp;dynamic, so can use it to do some real magic&nbsp;✨
+      </p>
+      <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 16px; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        <span style="box-sizing: border-box; font-weight: 600;">postcss.config.js</span>
+      </p>
+      <pre style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; margin-top: 0px; margin-bottom: 0px; word-wrap: normal; padding: 16px; overflow: auto; line-height: 1.45; background-color: rgb(246, 248, 250); border-radius: 3px; word-break: normal;">module.exports = ({ file, options, env }) =&gt; ({
+  parser: file.extname === &#39;.sss&#39; ? &#39;sugarss&#39; : false,
+  plugins: {    &#39;postcss-import&#39;: { root: file.dirname },    &#39;postcss-cssnext&#39;: options.cssnext ? options.cssnext : false,    &#39;autoprefixer&#39;: env === &#39;production&#39; ? options.autoprefixer : false,    &#39;cssnano&#39;: env === &#39;production&#39; ? options.cssnano : false
+  }
+})</pre>
+      <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 16px; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        <span style="box-sizing: border-box; font-weight: 600;">webpack.config.js</span>
+      </p>
+      <pre style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; margin-top: 0px; margin-bottom: 0px; word-wrap: normal; padding: 16px; overflow: auto; line-height: 1.45; background-color: rgb(246, 248, 250); border-radius: 3px; word-break: normal;">{
+  loader: &#39;postcss-loader&#39;,
+  options: {
+    config: {
+      ctx: {
+        cssnext: {...options},
+        cssnano: {...options},
+        autoprefixer: {...options}
+      }
+    }
+  }
+}</pre>
+      <h3 style="box-sizing: border-box; margin-top: 24px; margin-bottom: 16px; font-size: 1.25em; line-height: 1.25; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        <a class="anchor" href="https://github.com/postcss/postcss-loader#plugins" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none; float: left; padding-right: 4px; margin-left: -20px; line-height: 1;"></a><code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: inherit; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">Plugins</code>
+      </h3>
+      <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 16px; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        <span style="box-sizing: border-box; font-weight: 600;">webpack.config.js</span>
+      </p>
+      <pre style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; margin-top: 0px; margin-bottom: 0px; word-wrap: normal; padding: 16px; overflow: auto; line-height: 1.45; background-color: rgb(246, 248, 250); border-radius: 3px; word-break: normal;">{
+  loader: &#39;postcss-loader&#39;,
+  options: {
+    ident: &#39;postcss&#39;,    plugins: (loader) =&gt; [      require(&#39;postcss-import&#39;)({ root: loader.resourcePath }),      require(&#39;postcss-cssnext&#39;)(),      require(&#39;autoprefixer&#39;)(),      require(&#39;cssnano&#39;)()
+    ]
+  }
+}</pre>
+      <blockquote style="box-sizing: border-box; margin: 0px 0px 16px; padding: 0px 1em; color: rgb(106, 115, 125); border-left: 0.25em solid rgb(223, 226, 229); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 0px;">
+          ⚠️&nbsp;webpack requires an identifier (<code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">ident</code>) in&nbsp;<code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">options</code>&nbsp;when&nbsp;<code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">{Function}/require</code>&nbsp;is used (Complex Options). The&nbsp;<code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">ident</code>&nbsp;can be freely named as long as it is unique. It&#39;s recommended to name it (<code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">ident: &#39;postcss&#39;</code>)
+        </p>
+      </blockquote>
+      <h3 style="box-sizing: border-box; margin-top: 24px; margin-bottom: 16px; font-size: 1.25em; line-height: 1.25; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        <a class="anchor" href="https://github.com/postcss/postcss-loader#syntaxes" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none; float: left; padding-right: 4px; margin-left: -20px; line-height: 1;"></a><code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: inherit; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">Syntaxes</code>
+      </h3>
+      <table width="898" style="width: 828px;">
+        <thead style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);" class="firstRow">
+          <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            Name
+          </th>
+          <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            Type
+          </th>
+          <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            Default
+          </th>
+          <th align="left" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            Description
+          </th>
+        </tr>
+        </thead>
+        <tbody style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <a href="https://github.com/postcss/postcss-loader#parser" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none;"><code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">parser</code></a>
+          </td>
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">{String|Function}</code>
+          </td>
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">undefined</code>
+          </td>
+          <td align="left" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            Custom PostCSS Parser
+          </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <a href="https://github.com/postcss/postcss-loader#syntax" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none;"><code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">syntax</code></a>
+          </td>
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">{String|Function}</code>
+          </td>
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">undefined</code>
+          </td>
+          <td align="left" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            Custom PostCSS Syntax
+          </td>
+        </tr>
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <a href="https://github.com/postcss/postcss-loader#stringifier" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none;"><code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">stringifier</code></a>
+          </td>
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">{String|Function}</code>
+          </td>
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">undefined</code>
+          </td>
+          <td align="left" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            Custom PostCSS Stringifier
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <h4 style="box-sizing: border-box; margin-top: 24px; margin-bottom: 16px; line-height: 1.25; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        <a class="anchor" href="https://github.com/postcss/postcss-loader#parser" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none; float: left; padding-right: 4px; margin-left: -20px; line-height: 1;"></a><code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: inherit; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">Parser</code>
+      </h4>
+      <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 16px; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        <span style="box-sizing: border-box; font-weight: 600;">webpack.config.js</span>
+      </p>
+      <pre style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; margin-top: 0px; margin-bottom: 0px; word-wrap: normal; padding: 16px; overflow: auto; line-height: 1.45; background-color: rgb(246, 248, 250); border-radius: 3px; word-break: normal;">{
+  test: /\.sss$/,
+  use: [    ...,
+    { loader: &#39;postcss-loader&#39;, options: { parser: &#39;sugarss&#39; } }
+  ]
+}</pre>
+      <h4 style="box-sizing: border-box; margin-top: 24px; margin-bottom: 16px; line-height: 1.25; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        <a class="anchor" href="https://github.com/postcss/postcss-loader#syntax" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none; float: left; padding-right: 4px; margin-left: -20px; line-height: 1;"></a><code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: inherit; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">Syntax</code>
+      </h4>
+      <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 16px; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        <span style="box-sizing: border-box; font-weight: 600;">webpack.config.js</span>
+      </p>
+      <pre style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; margin-top: 0px; margin-bottom: 0px; word-wrap: normal; padding: 16px; overflow: auto; line-height: 1.45; background-color: rgb(246, 248, 250); border-radius: 3px; word-break: normal;">{
+  test: /\.css$/,
+  use: [    ...,
+    { loader: &#39;postcss-loader&#39;, options: { syntax: &#39;sugarss&#39; } }
+  ]
+}</pre>
+      <h4 style="box-sizing: border-box; margin-top: 24px; margin-bottom: 16px; line-height: 1.25; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        <a class="anchor" href="https://github.com/postcss/postcss-loader#stringifier" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none; float: left; padding-right: 4px; margin-left: -20px; line-height: 1;"></a><code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: inherit; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">Stringifier</code>
+      </h4>
+      <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 16px; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        <span style="box-sizing: border-box; font-weight: 600;">webpack.config.js</span>
+      </p>
+      <pre style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; margin-top: 0px; margin-bottom: 0px; word-wrap: normal; padding: 16px; overflow: auto; line-height: 1.45; background-color: rgb(246, 248, 250); border-radius: 3px; word-break: normal;">{
+  test: /\.css$/,
+  use: [    ...,
+    { loader: &#39;postcss-loader&#39;, options: { stringifier: &#39;midas&#39; } }
+  ]
+}</pre>
+      <h3 style="box-sizing: border-box; margin-top: 24px; margin-bottom: 16px; font-size: 1.25em; line-height: 1.25; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        <a class="anchor" href="https://github.com/postcss/postcss-loader#sourcemap" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none; float: left; padding-right: 4px; margin-left: -20px; line-height: 1;"></a><code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: inherit; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">SourceMap</code>
+      </h3>
+      <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 16px; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        Enables source map support,&nbsp;<code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">postcss-loader</code>&nbsp;will use the previous source map given by other loaders and update it accordingly, if no previous loader is applied before&nbsp;<code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">postcss-loader</code>, the loader will generate a source map for you.
+      </p>
+      <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 16px; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        <span style="box-sizing: border-box; font-weight: 600;">webpack.config.js</span>
+      </p>
+      <pre style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; margin-top: 0px; margin-bottom: 0px; word-wrap: normal; padding: 16px; overflow: auto; line-height: 1.45; background-color: rgb(246, 248, 250); border-radius: 3px; word-break: normal;">{
+  test: /\.css/,
+  use: [
+    { loader: &#39;style-loader&#39;, options: { sourceMap: true } },
+    { loader: &#39;css-loader&#39;, options: { sourceMap: true } },
+    { loader: &#39;postcss-loader&#39;, options: { sourceMap: true } },
+    { loader: &#39;sass-loader&#39;, options: { sourceMap: true } }
+  ]
+}</pre>
+      <h4 style="box-sizing: border-box; margin-top: 24px; margin-bottom: 16px; line-height: 1.25; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        <a class="anchor" href="https://github.com/postcss/postcss-loader#inline" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none; float: left; padding-right: 4px; margin-left: -20px; line-height: 1;"></a><code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: inherit; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">&#39;inline&#39;</code>
+      </h4>
+      <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 16px; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        You can set the&nbsp;<code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">sourceMap: &#39;inline&#39;</code>&nbsp;option to inline the source map within the CSS directly as an annotation comment.
+      </p>
+      <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 16px; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        <span style="box-sizing: border-box; font-weight: 600;">webpack.config.js</span>
+      </p>
+      <pre style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; margin-top: 0px; margin-bottom: 0px; word-wrap: normal; padding: 16px; overflow: auto; line-height: 1.45; background-color: rgb(246, 248, 250); border-radius: 3px; word-break: normal;">{
+  loader: &#39;postcss-loader&#39;,
+  options: {
+    sourceMap: &#39;inline&#39;
+  }
+}</pre>
+      <pre style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; margin-top: 0px; margin-bottom: 0px; word-wrap: normal; padding: 16px; overflow: auto; line-height: 1.45; background-color: rgb(246, 248, 250); border-radius: 3px; word-break: normal;">.class { color: red; }/*# sourceMappingURL=data:application/json;base64, ... */</pre>
+      <h2 style="box-sizing: border-box; margin-top: 24px; margin-bottom: 16px; line-height: 1.25; padding-bottom: 0.3em; border-bottom: 1px solid rgb(234, 236, 239); color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        <a class="anchor" href="https://github.com/postcss/postcss-loader#examples" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none; float: left; padding-right: 4px; margin-left: -20px; line-height: 1;"></a>Examples
+      </h2>
+      <h3 style="box-sizing: border-box; margin-top: 24px; margin-bottom: 16px; font-size: 1.25em; line-height: 1.25; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        <a class="anchor" href="https://github.com/postcss/postcss-loader#stylelint" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none; float: left; padding-right: 4px; margin-left: -20px; line-height: 1;"></a><code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: inherit; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">Stylelint</code>
+      </h3>
+      <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 16px; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        <span style="box-sizing: border-box; font-weight: 600;">webpack.config.js</span>
+      </p>
+      <pre style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; margin-top: 0px; margin-bottom: 0px; word-wrap: normal; padding: 16px; overflow: auto; line-height: 1.45; background-color: rgb(246, 248, 250); border-radius: 3px; word-break: normal;">{
+  test: /\.css$/,
+  use: [    &#39;style-loader&#39;,    &#39;css-loader&#39;,
+    {
+      loader: &#39;postcss-loader&#39;,
+      options: {
+        ident: &#39;postcss&#39;,
+        plugins: [          require(&#39;postcss-import&#39;)(),          require(&#39;stylelint&#39;)(),          ...,
+        ]
+      }
+    }
+  ]
+}</pre>
+      <h3 style="box-sizing: border-box; margin-top: 24px; margin-bottom: 16px; font-size: 1.25em; line-height: 1.25; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        <a class="anchor" href="https://github.com/postcss/postcss-loader#css-modules" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none; float: left; padding-right: 4px; margin-left: -20px; line-height: 1;"></a><code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: inherit; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">CSS Modules</code>
+      </h3>
+      <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 16px; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        This loader&nbsp;<a href="https://github.com/webpack/css-loader/issues/137" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none;">cannot be used</a>&nbsp;with&nbsp;<a href="https://github.com/webpack/css-loader#css-modules" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none;">CSS Modules</a>&nbsp;out of the box due to the way&nbsp;<code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">css-loader</code>&nbsp;processes file imports. To make them work properly, either add the css-loader’s&nbsp;<a href="https://github.com/webpack-contrib/css-loader#importloaders" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none;"><code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">importLoaders</code></a>&nbsp;option.
+      </p>
+      <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 16px; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        <span style="box-sizing: border-box; font-weight: 600;">webpack.config.js</span>
+      </p>
+      <pre style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; margin-top: 0px; margin-bottom: 0px; word-wrap: normal; padding: 16px; overflow: auto; line-height: 1.45; background-color: rgb(246, 248, 250); border-radius: 3px; word-break: normal;">{
+  test: /\.css$/,
+  use: [    &#39;style-loader&#39;,
+    { loader: &#39;css-loader&#39;, options: { modules: true, importLoaders: 1 } },    &#39;postcss-loader&#39;
+  ]
+}</pre>
+      <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 16px; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        or use&nbsp;<a href="https://github.com/outpunk/postcss-modules" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none;">postcss-modules</a>&nbsp;instead of&nbsp;<code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">css-loader</code>.
+      </p>
+      <h3 style="box-sizing: border-box; margin-top: 24px; margin-bottom: 16px; font-size: 1.25em; line-height: 1.25; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        <a class="anchor" href="https://github.com/postcss/postcss-loader#css-in-js" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none; float: left; padding-right: 4px; margin-left: -20px; line-height: 1;"></a><code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: inherit; padding: 0.2em 0.4em; margin: 0px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px;">CSS-in-JS</code>
+      </h3>
+      <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 16px; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        If you want to process styles written in JavaScript, use the&nbsp;<a href="https://github.com/postcss/postcss-js" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none;">postcss-js</a>&nbsp;parser.
+      </p>
+      <pre style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; margin-top: 0px; margin-bottom: 0px; word-wrap: normal; padding: 16px; overflow: auto; line-height: 1.45; background-color: rgb(246, 248, 250); border-radius: 3px; word-break: normal;">{
+  test: /\.style.js$/,
+  use: [    &#39;style-loader&#39;,
+    { loader: &#39;css-loader&#39;, options: { importLoaders: 2 } },
+    { loader: &#39;postcss-loader&#39;, options: { parser: &#39;postcss-js&#39; } },    &#39;babel-loader&#39;
+  ]
+}</pre>
+      <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 16px; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        As result you will be able to write styles in the following way
+      </p>
+      <pre style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; margin-top: 0px; margin-bottom: 0px; word-wrap: normal; padding: 16px; overflow: auto; line-height: 1.45; background-color: rgb(246, 248, 250); border-radius: 3px; word-break: normal;">import colors from &#39;./styles/colors&#39;export default {    &#39;.menu&#39;: {
+      color: colors.main,
+      height: 25,      &#39;&amp;_link&#39;: {
+      color: &#39;white&#39;
+    }
+  }
+}</pre>
+      <blockquote style="box-sizing: border-box; margin: 0px 0px 16px; padding: 0px 1em; color: rgb(106, 115, 125); border-left: 0.25em solid rgb(223, 226, 229); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 0px;">
+          ⚠️&nbsp;If you are using Babel you need to do the following in order for the setup to work
+        </p>
+      </blockquote>
+      <blockquote style="box-sizing: border-box; margin: 0px 0px 16px; padding: 0px 1em; color: rgb(106, 115, 125); border-left: 0.25em solid rgb(223, 226, 229); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        <ol style="box-sizing: border-box; padding-left: 2em;" class=" list-paddingleft-2">
+          <li>
+            <p>
+              Add&nbsp;<a href="https://github.com/59naga/babel-plugin-add-module-exports" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none;">babel-plugin-add-module-exports</a>&nbsp;to your configuration
+            </p>
+          </li>
+          <li>
+            <p>
+              You need to have only one&nbsp;<span style="box-sizing: border-box; font-weight: 600;">default</span>&nbsp;export per style module
+            </p>
+          </li>
+        </ol>
+      </blockquote>
+      <h3 style="box-sizing: border-box; margin-top: 24px; margin-bottom: 16px; font-size: 1.25em; line-height: 1.25; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        <a class="anchor" href="https://github.com/postcss/postcss-loader#extract-css" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none; float: left; padding-right: 4px; margin-left: -20px; line-height: 1;"></a><a href="https://github.com/webpack-contrib/extract-text-webpack-plugin" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none;">Extract CSS</a>
+      </h3>
+      <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 16px; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        <span style="box-sizing: border-box; font-weight: 600;">webpack.config.js</span>
+      </p>
+      <pre style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; margin-top: 0px; margin-bottom: 0px; word-wrap: normal; padding: 16px; overflow: auto; line-height: 1.45; background-color: rgb(246, 248, 250); border-radius: 3px; word-break: normal;">const ExtractTextPlugin = require(&#39;extract-text-webpack-plugin&#39;)module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: &#39;style-loader&#39;,
+          use: [
+            { loader: &#39;css-loader&#39;, options: { importLoaders: 1 } },            &#39;postcss-loader&#39;
+          ]
+        })
+      }
+    ]
+  },
+  plugins: [    new ExtractTextPlugin(&#39;[name].css&#39;)
+  ]
+}</pre>
+      <h2 style="box-sizing: border-box; margin-top: 24px; margin-bottom: 16px; line-height: 1.25; padding-bottom: 0.3em; border-bottom: 1px solid rgb(234, 236, 239); color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; white-space: normal; background-color: rgb(255, 255, 255);">
+        <a class="anchor" href="https://github.com/postcss/postcss-loader#maintainers" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none; float: left; padding-right: 4px; margin-left: -20px; line-height: 1;"></a>Maintainers
+      </h2>
+      <table width="898" style="width: 828px;">
+        <tbody style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);" class="firstRow">
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <a href="https://github.com/michael-ciniawsky" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none;"><img width="150" height="150" src="https://github.com/michael-ciniawsky.png?v=3&s=150"/>&nbsp;<br/>Michael Ciniawsky</a>
+          </td>
+          <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+            <a href="https://github.com/evilebottnawi" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none;"><img width="150" height="150" src="https://github.com/evilebottnawi.png?v=3&s=150"/>&nbsp;<br/>Alexander Krasnoyarov</a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <p>
+        <br/>
+      </p>
+    </div>
+    <div slot="extra" class="extra">
+      <div class="button" @click="open">
+        关注作者查看全文
+      </div>
+    </div>
+  </cutout>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<script src="../../dist/cutout.js"></script>
+<script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      on:true
+    },
+    methods: {
+      open () {
+        this.on = false;
+      }
+    }
+  })
+</script>
+</html>
