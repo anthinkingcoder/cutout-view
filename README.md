@@ -1,5 +1,5 @@
 # cutout-view
-
+> this is a vue component, its help us to cut out content.
 ## cutout Component
 ### props
 | param | description | type | default |
