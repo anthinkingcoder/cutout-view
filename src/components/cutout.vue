@@ -5,7 +5,9 @@
       </slot>
     </div>
     <div v-show="on" class="cutout__footer">
-      <div class="cutout__gradient" :style="gradientStyle">
+      <div class="cutout__layer" :style="layerStyle">
+        <slot name="layer">
+        </slot>
       </div>
       <slot name="extra"></slot>
     </div>
@@ -16,41 +18,51 @@
 <script>
   export default {
     props: {
-      show: {type: [Number, String], require: true},
+      showHeight: {type: [Number, String], require: true},
       on: {type: [Boolean], default: true},
-      gradientHeight: {type: [Number, String], default: 80}
+      layerHeight: {type: [Number, String], default: 80}
     },
+
     mounted() {
       this.updateStyles();
     },
+
     data() {
       return {
-        cutoutStyles: ''
+        cutoutStyles: '',
       }
     },
+
     watch: {
       on() {
         this.updateStyles();
+      },
+      show() {
+        this.updateStyles();
       }
     },
+
     computed: {
-      gradientStyle() {
+      layerStyle() {
         return {
-          'height': `${this.gradientHeight}px`,
-          'top': `-${this.gradientHeight}px`
+          'height': `${this.layerHeight}px`,
+          'top': `-${this.layerHeight}px`
         }
+      },
+      isOn() {
+        let elHeight = this.$refs.cutout.scrollHeight,
+          showHeight = this.showHeight,
+          layerHeight = this.layerHeight;
+        return this.on && elHeight > showHeight && showHeight > layerHeight
       }
     },
     methods: {
       updateStyles() {
-        let styles = {};
-        if (this.on) {
-          let elHeight = this.$refs.cutout.scrollHeight;
-          let show = this.show;
-          if (elHeight > show) {
-            styles['overflow-y'] = 'hidden';
-            styles['height'] = `${show}px`
-          }
+        let styles = {}, showHeight = this.showHeight;
+        if (this.isOn) {
+          styles['height'] = `${showHeight}px`
+        } else {
+          this.$emit('cancel', true);
         }
         this.cutoutStyles = styles;
       }
@@ -67,7 +79,11 @@
     position: relative;
   }
 
-  .cutout__gradient {
+  .cutout__content {
+    overflow: hidden;
+  }
+
+  .cutout__layer {
     position: absolute;
     width: 100%;
     left: 0;
