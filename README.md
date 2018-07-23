@@ -19,10 +19,9 @@
 | layer | the layer area content |
 | extra | extra content, at the bottom of the layer area|
 
+## example
 
-##example
-
-> live demo,open in [jsfiddle](https://jsfiddle.net/anthinkingcoder/c4guaq1n)
+>  see [live demo](https://jsfiddle.net/anthinkingcoder/c4guaq1n)
 ```html
 <cutout :show-height="800" :on="on" @on-cancel="cancel">
     <div slot="layer">
