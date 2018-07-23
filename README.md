@@ -11,13 +11,14 @@
 ### events
 | name | description | return value |
 | :-: | :-: | :-: |
-| cancel | Emitted when cutout is canceled(when this expression(!on  || factHeight < showHeight || showHeight < layerHeight) is true)| return false |
+| cancel | Emitted when cutout is canceled(when this expression(!on  || factHeight < showHeight || showHeight < layerHeight) is true))| return false |
 
 ### slot
 | name | description|
 | :-: | :-: |
 | layer | the bottom layer area content |
 | extra | extra content, At the bottom of the layer area|
+
 
 
 ##example
