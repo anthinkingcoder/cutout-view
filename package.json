@@ -4,7 +4,7 @@
   "description": "a cutout view",
   "author": "anthinkingcoder jojo837769723@gmail.com",
   "private": false,
-  "main": "dist/cutout-view.js",
+  "main": "dist/cutout.js",
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",

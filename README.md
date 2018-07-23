@@ -1,5 +1,12 @@
 # cutout-view
 > this is a vue component, its help us to cut out content.
+## Installation
+use npm
+```bash
+npm i cutout-view --save
+import cutout from 'cutout-view'
+Vue.use(cutout)
+```
 ## cutout Component
 ### props
 | param | description | type | default |
