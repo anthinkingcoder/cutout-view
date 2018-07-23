@@ -59,7 +59,15 @@
 
 <body>
 <div id="app">
-  <cutout :show-height="800" :on="on" @cancel="cancel">
+  <cutout :show-height="800" :on="on" @on-cancel="cancel">
+    <div slot="layer">
+      <img src="./img/down.png" class="down-btn" @click="open">
+    </div>
+    <div slot="extra" class="extra">
+      <div class="button" @click="open">
+        关注作者查看全文
+      </div>
+    </div>
     <h1
       style="box-sizing: inherit; border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; font-size: 33px; line-height: 1; font-family: Geomanist, sans-serif; vertical-align: baseline; margin: 0px 0px 0.25em; padding: 0px; color: rgb(70, 94, 105); white-space: normal;">
       tree shaking
@@ -420,14 +428,6 @@ module.exports = {
     <p>
       <br/>
     </p>
-    <div slot="layer">
-      <img src="" class="down-btn" @click="open">
-    </div>
-    <div slot="extra" class="extra">
-      <div class="button" @click="open">
-        关注作者查看全文
-      </div>
-    </div>
   </cutout>
 </div>
 </body>

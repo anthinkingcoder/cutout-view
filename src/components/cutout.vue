@@ -62,7 +62,7 @@
         if (this.isOn) {
           styles['height'] = `${showHeight}px`
         } else {
-          this.$emit('cancel', true);
+          this.$emit('on-cancel', true);
         }
         this.cutoutStyles = styles;
       }
